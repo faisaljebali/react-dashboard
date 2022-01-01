@@ -11,7 +11,7 @@ import { AbilityContext } from '@src/utility/context/Can'
 import { Link, useHistory } from 'react-router-dom'
 import InputPasswordToggle from '@components/input-password-toggle'
 import { isObjEmpty } from '@utils'
-import { Coffee } from 'react-feather'
+import { Coffee, Loader } from 'react-feather'
 import {
   Alert,
   Row,
@@ -50,6 +50,7 @@ const Login = props => {
   const history = useHistory()
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const [loader, setLoader] = useState(false)
 
   const { register, errors, handleSubmit } = useForm()
   const illustration = skin === 'dark' ? 'login-v2-dark.svg' : 'login-v2.svg',
@@ -57,12 +58,13 @@ const Login = props => {
 
   const onSubmit = data => {
     if (isObjEmpty(errors)) {
+      setLoader(!loader)
       useJwt
         .login({ email, password })
         .then(res => {
-          const data = { ...res.data.userData, accessToken: res.data.accessToken, refreshToken: res.data.refreshToken }
-          console.log(res)
+          const data = { ...res.data.userData[0], accessToken: res.data.accessToken, refreshToken: res.data.refreshToken }
           dispatch(handleLogin(data))
+          setLoader(!loader)
           //ability.update(res.data.userData.ability)
           history.push('/')
           toast.success(
@@ -70,7 +72,10 @@ const Login = props => {
             { transition: Slide, hideProgressBar: true, autoClose: 2000 }
           )
         })
-        .catch(err => console.log(err))
+        .catch(err => {
+          setLoader(false)
+          console.log(err)
+        })
     }
   }
 
@@ -158,10 +163,10 @@ const Login = props => {
               <FormGroup>
                 <div className='d-flex justify-content-between'>
                   <Label className='form-label' for='login-password'>
-                    Password
+                    Mot de passe
                   </Label>
                   <Link to='/forgot-password'>
-                    <small>Forgot Password?</small>
+                    <small>Mot de passe oublié ?</small>
                   </Link>
                 </div>
                 <InputPasswordToggle
@@ -174,16 +179,16 @@ const Login = props => {
                 />
               </FormGroup>
               <FormGroup>
-                <CustomInput type='checkbox' className='custom-control-Primary' id='remember-me' label='Remember Me' />
+                <CustomInput type='checkbox' className='custom-control-Primary' id='remember-me' label='Se souvenir de moi' />
               </FormGroup>
               <Button.Ripple type='submit' color='primary' block>
-                Sign in
+                {loader && <Loader className='loader'/>} S'identifier 
               </Button.Ripple>
             </Form>
             <p className='text-center mt-2'>
-              <span className='mr-25'>New on our platform?</span>
+              <span className='mr-25'>Vous n'avez pas de compte ?</span>
               <Link to='/register'>
-                <span>Create an account</span>
+                <span>Créer un compte</span>
               </Link>
             </p>
           </Col>

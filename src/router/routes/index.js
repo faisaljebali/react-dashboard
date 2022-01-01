@@ -23,6 +23,14 @@ const Routes = [
     meta: {
       authRoute: true
     }
+  },  
+  {
+    path: '/register',
+    component: lazy(() => import('../../views/Register')),
+    layout: 'BlankLayout',
+    meta: {
+      authRoute: true
+    }
   },
   {
     path: '/error',

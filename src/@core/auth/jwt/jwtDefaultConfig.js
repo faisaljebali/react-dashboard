@@ -1,7 +1,7 @@
 // ** Auth Endpoints
 export default {
   loginEndpoint: 'http://calandly.test/api/auth/login',
-  registerEndpoint: '/jwt/register',
+  registerEndpoint: 'http://calandly.test/api/auth/register',
   refreshEndpoint: '/jwt/refresh-token',
   logoutEndpoint: '/jwt/logout',
 
