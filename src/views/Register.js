@@ -34,7 +34,7 @@ const Register = () => {
 
   const dispatch = useDispatch()
 
-  const { register, errors, handleSubmit, trigger } = useForm({ mode: 'onChange', resolver: yupResolver(SignupSchema) })
+  const { register, errors, handleSubmit } = useForm({ mode: 'onChange', resolver: yupResolver(SignupSchema) })
   const [email, setEmail] = useState('')
   const [valErrors, setValErrors] = useState({})
   const [lastName, setLastName] = useState('')
@@ -258,7 +258,7 @@ const Register = () => {
               </FormGroup>
               <FormGroup>
                 <Label className='form-label' for='register-password'>
-                  Password
+                  Mot de passe
                 </Label>
                 <InputPasswordToggle
                   id='register-password'

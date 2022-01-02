@@ -13,8 +13,14 @@ const Routes = [
     component: lazy(() => import('../../views/Home'))
   },
   {
-    path: '/users',
-    component: lazy(() => import('../../views/users/Users'))
+    path: '/jobs',
+    component: lazy(() => import('../../views/emploi/EmploiListe')),
+    exact : true
+  },
+  {
+    path: '/jobs/add',
+    component: lazy(() => import('../../views/emploi/AddEmploi')),
+    exact : true
   },
   {
     path: '/login',

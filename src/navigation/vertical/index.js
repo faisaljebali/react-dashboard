@@ -1,17 +1,17 @@
-import { Mail, Home, Users } from 'react-feather'
+import { Database, Home, Users, Calendar, Briefcase, Sliders, Cpu, HardDrive } from 'react-feather'
 
 export default [
   {
     id: 'home',
-    title: 'Home',
-    icon: <Home size={20} />,
+    title: 'Tableau de bord',
+    icon: <Cpu size={25} />,
     navLink: '/home'
   },
   {
-    id: 'users',
-    title: 'Users',
-    icon: <Users size={20} />,
-    navLink: '/users'
+    id: 'jobs',
+    title: "Offres d'emploi",
+    icon: <Briefcase size={25} />,
+    navLink: '/jobs'
     /*children: [
       {
         id: 'invoiceList',
@@ -26,5 +26,35 @@ export default [
         navLink: '/apps/invoice/preview'
       }
     ]*/
+  },  
+  {
+    id: 'condidat',
+    title: 'Candidats',
+    icon: <Users size={25} />,
+    navLink: '/condidat'
+  },
+  {
+    id: 'departement',
+    title: 'Département',
+    icon: <HardDrive size={25} />,
+    navLink: '/departement'
+  },
+  {
+    id: 'calander',
+    title: 'Calendrier',
+    icon: <Calendar size={25} />,
+    navLink: '/calander'
+  },
+  {
+    id: 'equipe',
+    title: 'Equipe',
+    icon: <Database size={25} />,
+    navLink: '/equipe'
+  },
+  {
+    id: 'parametre',
+    title: 'Parametre',
+    icon: <Sliders size={25} />,
+    navLink: '/Parametre'
   }
 ]

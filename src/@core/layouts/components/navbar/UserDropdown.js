@@ -35,7 +35,7 @@ const UserDropdown = () => {
 
   //** Vars
   const userAvatar = (userData && userData.avatar) || defaultAvatar
-  console.log('userData', userData)
+
   return (
     <UncontrolledDropdown tag='li' className='dropdown-user nav-item'>
       <DropdownToggle href='/' tag='a' className='nav-link dropdown-user-link' onClick={e => e.preventDefault()}>

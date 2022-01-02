@@ -3,9 +3,10 @@
 //Template config options
 const themeConfig = {
   app: {
-    appName: 'Vuexy',
+    appName: 'QuickRH',
     appLogoImage: require('@src/assets/images/logo/logo.svg').default
   },
+  api_url: "http://calandly.test/api",
   layout: {
     isRTL: false,
     skin: 'light', // light, dark, bordered, semi-dark

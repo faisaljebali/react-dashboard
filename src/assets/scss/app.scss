@@ -7,3 +7,163 @@
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
 }
+
+.card .card-title {
+    font-weight: 500;
+    font-size: 1.5rem;
+}
+
+.main-menu .navigation > li {
+    margin-bottom: 5px;
+}
+
+.notFoundData{
+    margin: 50px 0;
+    text-align: center;
+    font-size: 17px;
+}
+
+.main-menu ul.navigation-main > li:first-child {
+    margin-top: 1.5rem;
+}
+.main-menu .navbar-header .navbar-brand {
+    margin-top: 2rem;
+}
+.nav .modern-nav-toggle {
+    margin: 2.1rem 0;
+}
+.rdw-editor-main {
+    background: #fff;
+    margin-top: -5px;
+    color: black;
+    min-height: 100px;
+    padding: 5px;
+    font-size: 15px;
+    border: 1px solid #b9acac;
+}
+.rdw-editor-toolbar {
+    border-radius: 0px;
+    border: 1px solid #b9acac !important;
+}
+
+.loading-content{
+    margin: 120px 0 60px;
+    .loading{
+        position: relative;
+    }
+}
+label {
+    color: #000000;
+    font-size: 14px;
+}
+//Datatable style
+.react-dataTable {
+    .rdt_TableHeadRow {
+        background-color: #f3f2f7;
+        border-color: currentcolor #ebe9f1 #ebe9f1;
+        border-top: 1px solid #ebe9f1;
+        min-height: 40px;
+    }
+} 
+
+.dark-layout {
+    .app-user-list {
+      header {
+        background-color: #283046;
+      }
+    }
+  
+    .react-dataTable {
+      .hlidmt {
+        background-color: #283046;
+      }
+      .khKjDK {
+        background-color: #283046;
+        color: #b4b7bd;
+      }
+  
+      .rdt_Table {
+        background: #283046;
+        color: #b4b7bd;
+  
+        & > div:first-child:not(.rdt_TableHead):not(.rdt_TableBody) {
+          color: #b4b7bd;
+          background-color: #283046;
+        }
+      }
+      .rdt_TableHead {
+        .rdt_TableHeadRow {
+          background-color: #283046;
+          border-color: #3b4253;
+          .rdt_TableCol {
+            color: #b4b7bd;
+            div[role='button'] {
+              color: #b4b7bd;
+            }
+          }
+          .rdt_TableCol_Sortable {
+            color:#3b4253;
+  
+            svg {
+              stroke: #3b4253;
+            }
+          }
+        }
+      }
+      .rdt_TableBody {
+        .expandable-content {
+          background-color: #283046;
+          color: #b4b7bd;
+        }
+        .rdt_TableRow {
+          background-color: #283046;
+          color: #b4b7bd;
+          border-color: #3b4253;
+          .rdt_TableCell {
+            color: #b4b7bd;
+            .column-action {
+              svg {
+                stroke: #b4b7bd;
+              }
+            }
+          }
+          button {
+            &:hover:not(:disabled) {
+              background-color: #3b4253;
+            }
+            svg {
+              color: #b4b7bd;
+            }
+          }
+          .permissions-actions {
+            button:hover {
+              background-color: transparent;
+            }
+          }
+        }
+      }
+      .rdt_Pagination {
+        color: #b4b7bd;
+        border-color: #3b4253;
+        background-color: #283046;
+  
+        svg {
+          fill: #b4b7bd;
+        }
+      }
+    }
+  
+    .rdt_Pagination {
+      color: #b4b7bd;
+      background-color: #3b4253;
+      button {
+        svg {
+          fill: #b4b7bd;
+        }
+        &[disabled] svg {
+          fill: #3b4253;
+        }
+      }
+    }
+  }
+  

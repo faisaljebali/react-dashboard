@@ -15,7 +15,7 @@ import {
 
 const BreadCrumbs = props => {
   // ** Props
-  const { breadCrumbTitle, breadCrumbParent, breadCrumbParent2, breadCrumbParent3, breadCrumbActive } = props
+  const { breadCrumbTitle, linkParant, breadCrumbParent, breadCrumbParent2, breadCrumbParent3, breadCrumbActive } = props
 
   return (
     <div className='content-header row'>
@@ -26,10 +26,10 @@ const BreadCrumbs = props => {
             <div className='breadcrumb-wrapper vs-breadcrumbs d-sm-block d-none col-12'>
               <Breadcrumb>
                 <BreadcrumbItem tag='li'>
-                  <Link to='/'>Home</Link>
+                  <Link to='/'>Accueil</Link>
                 </BreadcrumbItem>
                 <BreadcrumbItem tag='li' className='text-primary'>
-                  {breadCrumbParent}
+                {linkParant ? <Link to={linkParant}>{breadCrumbParent}</Link> : breadCrumbParent }
                 </BreadcrumbItem>
                 {breadCrumbParent2 ? (
                   <BreadcrumbItem tag='li' className='text-primary'>
@@ -51,33 +51,6 @@ const BreadCrumbs = props => {
               </Breadcrumb>
             </div>
           </div>
-        </div>
-      </div>
-      <div className='content-header-right text-md-right col-md-3 col-12 d-md-block d-none'>
-        <div className='form-group breadcrum-right dropdown'>
-          <UncontrolledButtonDropdown>
-            <DropdownToggle color='primary' size='sm' className='btn-icon btn-round dropdown-toggle'>
-              <Grid size={14} />
-            </DropdownToggle>
-            <DropdownMenu tag='ul' right>
-              <DropdownItem tag={Link} to='/apps/chat'>
-                <CheckSquare className='mr-1' size={14} />
-                <span className='align-middle'>Todo</span>
-              </DropdownItem>
-              <DropdownItem tag={Link} to='/apps/chat'>
-                <MessageSquare className='mr-1' size={14} />
-                <span className='align-middle'>Chat</span>
-              </DropdownItem>
-              <DropdownItem tag={Link} to='/apps/email'>
-                <Mail className='mr-1' size={14} />
-                <span className='align-middle'>Email</span>
-              </DropdownItem>
-              <DropdownItem tag={Link} to='/apps/calendar'>
-                <Calendar className='mr-1' size={14} />
-                <span className='align-middle'>Calendar</span>
-              </DropdownItem>
-            </DropdownMenu>
-          </UncontrolledButtonDropdown>
         </div>
       </div>
     </div>

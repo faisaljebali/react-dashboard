@@ -132,7 +132,7 @@ const Router = () => {
                   <Route
                     key={route.path}
                     path={route.path}
-                    exact={route.exact === true}
+                    exact={true}
                     render={props => {
                       // ** Assign props to routerProps
                       Object.assign(routerProps, {
